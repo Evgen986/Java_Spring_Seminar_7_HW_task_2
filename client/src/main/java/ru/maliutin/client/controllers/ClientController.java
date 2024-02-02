@@ -46,7 +46,7 @@ public class ClientController {
         HttpEntity<String> entity = new HttpEntity<>(httpHeaders);
         // Отправляем запрос
         ResponseEntity<byte[]> response =
-                template.exchange("http://localhost:8181/cat",
+                template.exchange("http://localhost:8081/cat",
                         HttpMethod.GET, entity, byte[].class);
         // Преобразование изображения
         String base64Image = Base64.getEncoder().encodeToString(response.getBody());
